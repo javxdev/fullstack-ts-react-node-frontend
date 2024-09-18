@@ -21,7 +21,7 @@ export default function Products() {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-black text-slate-600 uppercase">All Products</h2>
+        <h2 className="text-xl md:text-2xl font-black text-slate-600 uppercase">All Products</h2>
         <Link
           to="products/new"
           className="rounded-md p-3 bg-primary hover:bg-primaryHover text-sm text-white shadow-sm"

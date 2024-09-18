@@ -22,27 +22,27 @@ export default function ProductDetails({product} : ProductDetailsPros) {
 
     return (
         <tr className="border-b ">
-            <td className="p-3 text-lg text-gray-800">
+            <td className="text-sm md:text-lg p-3 text-gray-800">
                 {product.name}
                 
             </td>
-            <td className="p-3 text-lg text-gray-800">
+            <td className="text-sm md:text-lg p-3 text-gray-800">
                 {formatCurrency(product.price)}
             </td>
-            <td className="p-3 text-xs text-gray-800">
+            <td className="text-xs p-3 text-gray-800">
                 <fetcher.Form method="POST">
                     <button
                         type="submit"
                         name="id"
                         value={product.id}
-                        className={`${isAvailable ? 'text-black' : 'text-red-600'} border border-black hover:cursor-pointer rounded p-2 text-xs font-bold w-full`}
+                        className={`border ${isAvailable ? 'text-black border-black' : 'text-red-600 border-red-600'} hover:cursor-pointer rounded p-2 text-xs font-bold w-full`}
                     >
                         {isAvailable ? 'Available' : 'Not Available'}
                     </button>
                 </fetcher.Form>
                 
             </td>
-            <td className="text-lg text-gray-800">
+            <td className="text-gray-800">
                 <div className="flex gap-3 items-center">
                     <button
                         onClick={() => navigate(`/products/${product.id}/edit`)}
@@ -62,7 +62,7 @@ export default function ProductDetails({product} : ProductDetailsPros) {
                         <input
                             type="submit"
                             value="Delete"
-                            className="border  border-red-700 text-red-700 rounded w-full p-2 font-bold text-xs text-center cursor-pointer"
+                            className="border border-red-700 text-red-700 rounded w-full p-2 font-bold text-xs text-center cursor-pointer"
                         />
                     </Form>
                 </div>
